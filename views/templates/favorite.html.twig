@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<link href="{{constant('training\\Bootstrap::ENTRY_URL')}}css/training.css" rel="stylesheet" type="text/css"/>
+		<title>筋トレメニュー</title>
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<div id="favorite_list">
+				<dd>
+					<span style="font-size:120%;">
+						お気に入りリスト
+					</span>
+				</dd>
+				<p>お気に入りリスト</p>
+
+				{% if dataArr | length == 0 %}
+					<p>お気に入りはありません</p>
+				{% else %}
+					{% for value in dataArr %}
+						<div class="menu">
+							<ul>
+								<li class="name" style="font-size:120%;">{{value.menu_name}}</li>
+								<dd>{{value.detail}}</dd>
+								<dt>
+									<input type="button" onclick="location.href='./index.php?display=favorite&fav_id={{value.fav_id}}'" value="削除"/>
+								</dt>
+							</ul>
+						</div>
+					{% endfor %}
+				{% endif %}
+				<div id="search_button">
+					<input type="button" name="back" onclick="location.href='./index.php'" value="検索へ戻る"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

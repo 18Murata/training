@@ -1,0 +1,62 @@
+div#category ul li {
+    list-style-type: none;
+}
+
+div#wrapper {
+    position: relative;
+}
+
+div#wrapper div#category {
+    float: left;
+}
+
+div#wrapper div#menu_list {
+    position: absolute;
+    width: auto;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+div#wrapper div#favorite_button {
+    position: absolute;
+    left: 65%;
+    top: 0px;
+    padding-bottom: 15px;
+}
+
+div#wrapper div#menu_detail {
+    position: absolute;
+    margin-left: 15%;
+    top: 0px;
+    padding-bottom: 15px;
+}
+
+div#wrapper div#menu_detail div.detail{
+    line-height: 40px;
+}
+
+div#wrapper div#menu_detail div#google_search {
+    margin-top: 30px;
+}
+
+div#wrapper div#menu_detail div.favorite_in {
+    position: relative;
+    left: 140%;
+    top: 0px;
+    padding-bottom: 15px;
+}
+
+div#wrapper div#favorite_list {
+    position: absolute;
+    margin-left: 15%;
+    top: 0px;
+    padding-bottom: 15px;
+    line-height: 40px;
+}
+
+div#wrapper div#search_button {
+    position: absolute;
+    left: 140%;
+    top: 0px;
+    padding-bottom: 15px;
+}

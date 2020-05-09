@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta http-equive="content-type" content="text/html; charset=utf-8"/>
+		<script language="JavaScript" type="text/javascript" src="{{constant('training\\Bootstrap::ENTRY_URL')}}js/jquery-3.2.1.min.js"></script>
+		<script language="JavaScript" type-"text/javascript" src="{{constant('training\\Bootstrap::ENTRY_URL')}}js/training.js"></script>
+		<link href="{{constant('training\\Bootstrap::ENTRY_URL')}}css/training.css" rel="stylesheet" type="text/css"/>
+		<title>筋トレメニュー</title>
+	</head>
+
+	<body>
+		<input type="hidden" name="entry_url" value="{{constant('training\\Bootstrap::ENTRY_URL')}}" id="entry_url">
+		<div id="wrapper">
+			{% include 'category_menu.html.twig' %}
+			<div id="menu_detail">
+				<div class="detail">
+					<dl>
+						<dd>
+							<li style="font-size:120%;">
+								{{menuData.menu_name}}
+							</li>
+						</dd>
+						<dd>{{menuData.detail}}</dd>
+						<input type="hidden" naem="menu_id" id="menu_id" value="{{menuData.menu_id}}">
+					</dl>
+				</div>
+				<div id="google_search">
+					<form method="get" action="http://www.google.co.jp/search" target="_blank">
+						<input type="hidden" name="q" size="31" value={{menuData.menu_name}}>
+						<input type="submit" name="btng" value="Googleで調べる">
+						<input type="hidden" name="hl" value="ja">
+					</form>
+				</div>
+				<div class="favorite_in">
+					<input type="button" name="back" value="検索へ戻る" onclick="history.back(); return false;"/>
+					<input type="button" name="favorite_in" value="お気に入りする" id="favorite_in"/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

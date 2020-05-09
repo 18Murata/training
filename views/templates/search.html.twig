@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta htto-equive="content-type" content="text/html; charaset=utf-8"/>
+		<link href="{{constant('training\\Bootstrap::ENTRY_URL')}}css/training.css" rel="stylesheet" type="text/css"/>
+		<title>筋トレメニュー</title>
+	</head>
+
+	<body>
+		<div id="wrapper">
+			<div id="category">
+				{% include 'category_menu.html.twig' %}
+			</div>
+			<div id="menu_list">
+				<span style="font-size:120%;">メニュー</span>
+				{% for value in dataArr %}
+					<div class="menu">
+						<ul>
+							<li class="name">
+								<a href="{{constant('training\\Bootstrap::ENTRY_URL')}}index.php?display=detail&menu_id={{value.menu_id}}">{{value.menu_name}}</a>
+							</li>
+						</ul>
+					</div>
+				{% endfor %}
+			</div>
+			<div id="favorite_button">
+				<input type="button" name="favorite_in" onclick="location.href='./index.php?display=favorite'" value="お気に入りリスト"/>
+			</div>
+		</body>
+	</body>
+</html>
+
